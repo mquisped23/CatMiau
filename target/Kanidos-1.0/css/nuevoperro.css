@@ -1,0 +1,107 @@
+#subti{
+  margin-left: 134px;
+    margin-top: 30px;
+    font-size: 52px;
+}
+#subtiF{
+    margin-left: 134px;
+    margin-top: 30px;
+    font-size: 52px;
+}
+
+#german{
+    height: 450px;
+}
+.cuadros{
+    width: 260px;
+    height: 35px;
+    text-align: center;
+    margin-left: 30px;
+    border: 0;
+    display: flex;
+    align-items: center;
+}
+
+#formulario{
+    margin-top: 30px;
+    width: 100%;
+    height:inherit;
+    display: flex;
+    justify-content: inherit;
+    align-items: flex-start;
+
+}
+#subEdit{
+    background: #E5F3FF;
+    margin: inherit;
+    margin-bottom: 40px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+}
+
+
+#id{
+    text-align: center;
+}
+#id2{
+    text-align: center;
+}
+#div1{
+    border-radius: 10px;
+
+    width: 400px;
+    font-size: 20px;
+    background: #E5F3FF;
+    margin-left: 540px;
+    height: 500px;
+    padding:30px;
+
+}
+#fotito{
+    height: 400px;
+    margin-top: 50px;
+}
+.editPaseo{
+
+    margin-left: 500px;
+
+}
+#imagenEdit {
+
+    margin-left: 30px;
+}
+.ps{
+    text-align: center;
+    color: #276294;
+    font-size: 27px;
+    font-weight: normal;
+    margin-top: 20px;
+    margin-block-end: 20px;
+}
+
+#boton1{
+    background:#3991DE; 
+    border-radius: 15px;
+    border: 0px;
+    margin-left: 107px;
+    margin-top: 30px;
+    height: 46px;
+    width: 100px;
+}
+ul.nav navbar-nav.navbar-right{
+    width: 600px;
+
+}
+body#top {
+    background-size: cover;
+}
+
+
+.fondito1{
+     
+    background: no-repeat;
+    background-image: url(../img/gatitoColibri.jpg);
+    
+}
+
