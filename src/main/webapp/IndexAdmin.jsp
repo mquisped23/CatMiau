@@ -1,15 +1,17 @@
 <%
     //Aqui obtengo el nivel del administrador enviado desde el sevlet SignInServlet
    String idUsuario  = String.valueOf( session.getAttribute("idAdmin"));
+    String username  = String.valueOf( session.getAttribute("username"));
 %>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
     <head>
 
         <title>Kani2</title>
 
-
-        <meta charset="UTF-8">
+        <meta charset="UTF-8"/>
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
         <meta name="description" content="">
         <meta name="keywords" content="">
@@ -70,9 +72,7 @@
                 <!-- MENU LINKS -->
                 <div  class="collapse navbar-collapse " style="width: 100%" >
                     <ul class="nav navbar-nav navbar-right" >
-                        <li><a id="fondoverde" href="indexLogeado.html" class="smoothScroll">Home</a></li>
-                        <li><a id="fondoverde" href="new-paseo.jsp"  class="smoothScroll">Nueva MiauCita</a></li>
-
+                        <li><a id="fondoverde" href="IndexAdmin.jsp" class="smoothScroll">Home</a></li>
                         <li><a id="fondoverde" href="showmascotasservlet" class="smoothScroll">Mis MiauCitas</a></li>
                         <li><a id="fondoverde" href="#news" class="smoothScroll">Personal</a></li>
 
@@ -101,7 +101,7 @@
                                 <div class="col-md-offset-1 col-md-10">
                                     <br><br>
 
-                                    <h1>En nuestro chat podras compartir amenas platicas con los demás clientes sobre sus gatitos y su cuidados</h1>
+                                    <h1>En nuestro chat podras compartir amenas platicas con los demas clientes sobre sus gatitos y su cuidados</h1>
                                     <br><br>
                                     <a href="Pruevita.jsp" class="section-btn btn btn-default smoothScroll">Nuestro KatChat</a>
                                 </div>
@@ -111,8 +111,8 @@
                         <div class="item item-second">
                             <div class="caption">
                                 <div class="col-md-offset-1 col-md-10">
-                                    <h1>KatMiau</h1>
-                                    <a href="#about" class="section-btn btn btn-default btn-gray smoothScroll">Nuestra Visión</a>
+                                    <h1>Bienvenido <%=username %></h1>
+                                    <a href="#about" class="section-btn btn btn-default btn-gray smoothScroll">Nuestra Vision</a>
                                 </div>
                             </div>
                         </div>
@@ -121,7 +121,7 @@
                             <div class="caption">
                                 <div class="col-md-offset-1 col-md-10">
                                     <h1>KatMiau</h1>
-                                    <a href="#about" class="section-btn btn btn-default btn-blue smoothScroll">Nuestra Misión</a>
+                                    <a href="#about" class="section-btn btn btn-default btn-blue smoothScroll">Nuestra Mision</a>
                                 </div>
                             </div>
                         </div>
