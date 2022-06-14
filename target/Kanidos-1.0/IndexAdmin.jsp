@@ -1,10 +1,20 @@
 
-<%@page session="true" %> 
 <%
     //Aqui obtengo el nivel del administrador enviado desde el sevlet SignInServlet
    String idUsuario  = String.valueOf( session.getAttribute("idAdmin"));
     String username  = String.valueOf( session.getAttribute("username"));
+    
+    response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+    
+    if (session.getAttribute("idUsuario") == null && session.getAttribute("username") == null) {
+        response.sendRedirect("login.jsp");
+    }
+
 %>
+
+<%@page errorPage="login.jsp"%> 
+
+
 
 <!DOCTYPE html>
 <html lang="es">
@@ -326,6 +336,4 @@
 
     </body>
 </html>
-
-
 

@@ -10,14 +10,19 @@ import java.io.IOException;
 
 @WebServlet(name = "SignoutServlet", urlPatterns = "/signout")
 public class SignoutServlet extends HttpServlet {
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher requestDispatcher;
+
+        request.getSession().removeAttribute("idUsuario");
+        request.getSession().removeAttribute("username");
+        request.getSession().invalidate();
+
         request.setAttribute("message", "Se ha cerrado la sesión de forma correcta.");
-        requestDispatcher = request.getRequestDispatcher("index.html");
-        requestDispatcher.forward(request, response);
+         response.sendRedirect(request.getContextPath() + "/login.jsp");
+     
     }
 }
