@@ -1,3 +1,5 @@
+
+<%@page session="true" %> 
 <%
     //Aqui obtengo el nivel del administrador enviado desde el sevlet SignInServlet
    String idUsuario  = String.valueOf( session.getAttribute("idAdmin"));
@@ -73,7 +75,7 @@
                 <div  class="collapse navbar-collapse " style="width: 100%" >
                     <ul class="nav navbar-nav navbar-right" >
                         <li><a id="fondoverde" href="IndexAdmin.jsp" class="smoothScroll">Home</a></li>
-                        <li><a id="fondoverde" href="showmascotasservlet" class="smoothScroll">Mis MiauCitas</a></li>
+                        <li><a id="fondoverde" href="ListarUsuarioServ" class="smoothScroll">Mis MiauCLientes</a></li>
                         <li><a id="fondoverde" href="#news" class="smoothScroll">Personal</a></li>
 
                         <li><a id="fondoverde" href="#google-map" class="smoothScroll">Contactanos</a></li>

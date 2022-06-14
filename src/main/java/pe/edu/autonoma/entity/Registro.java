@@ -39,6 +39,8 @@ public class Registro {
         this.contra = contra;
         this.nivel = nivel;
     }
+    
+    
 
     public String getNivel() {
         return nivel;

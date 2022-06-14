@@ -45,7 +45,7 @@ public class SignInServlet extends HttpServlet {
             }else{
                 id = usuario.getId();
                 sesion.setAttribute("username", username);
-                sesion.setAttribute("idAdmin", id);
+                sesion.setAttribute("idUsuario", id);
                 sesion.setAttribute("key", "dsjhf.FDS!543|5G*DFgfdrhd%#454GDfgDb"+username);
                  requestDispatcher = request.getRequestDispatcher("IndexAdmin.jsp");
                 requestDispatcher.forward(request, response);

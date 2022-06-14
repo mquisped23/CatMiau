@@ -1095,6 +1095,12 @@ td#borrarTd{
     justify-content: center;
 }
 
+td#borrarTdRight{
+
+    border-right: 0;
+  
+}
+
 a#botonespacio{
     margin-right: 20px;
 }

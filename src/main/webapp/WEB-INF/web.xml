@@ -4,9 +4,17 @@
         <servlet-name>ServletChat</servlet-name>
         <servlet-class>pe.edu.autonoma.controller.ServletChat</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ListarUsuarioServ</servlet-name>
+        <servlet-class>pe.edu.autonoma.controller.ListarUsuarioServ</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ServletChat</servlet-name>
         <url-pattern>/ServletChat</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListarUsuarioServ</servlet-name>
+        <url-pattern>/ListarUsuarioServ</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

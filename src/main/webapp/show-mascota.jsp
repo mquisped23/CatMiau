@@ -104,7 +104,7 @@
                         //Instanciamos la clase UserService
                         MascotaDao dao = new MascotaDao();
                         System.out.println(id);
-                        List<Mascota> datos = dao.list(6);//El <User>viene del servicio
+                        List<Mascota> datos = dao.list(id);//El <User>viene del servicio
                         for (Mascota u : datos) {
 
 
