@@ -33,7 +33,7 @@
         <link rel="stylesheet" href="css/animate.css">
         <link rel="stylesheet" href="css/owl.carousel.css">
         <link rel="stylesheet" href="css/owl.theme.default.min.css">
-        <link rel="stylesheet" href="css/nuevoperro.css"
+        <link rel="stylesheet" href="css/nuevoperro.css">
               <link href="csss/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <!-- MAIN CSS -->
         <link rel="stylesheet" href="css/tooplate-style.css">
