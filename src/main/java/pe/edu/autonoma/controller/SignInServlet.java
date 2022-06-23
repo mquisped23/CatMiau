@@ -10,11 +10,13 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.Optional;
 import pe.edu.autonoma.dao.UsuarioDao;
+import pe.edu.autonoma.encriptamiento.EncriptacionContra;
 import pe.edu.autonoma.entity.Registro;
 import pe.edu.autonoma.entity.Usuario;
 
 @WebServlet(name = "SignInServlet", urlPatterns = "/signin")
 public class SignInServlet extends HttpServlet {
+    EncriptacionContra desencriptar = new EncriptacionContra();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession sesion = request.getSession();
@@ -34,17 +36,16 @@ public class SignInServlet extends HttpServlet {
 
         if (optionalUsuario.isPresent()) {
             Usuario usuario = optionalUsuario.get();
-
-            if (usuario.getPassword().equals(password) && usuario.getNivel().equals("2")) {
+            String contra  = desencriptar.Desencriptar(usuario.getPassword());
+            if (contra.equals(password) && usuario.getNivel().equals("2")) {
                 id = usuario.getId();
                 sesion.setAttribute("username", username);
                 sesion.setAttribute("idUsuario", id);
 
                 sesion.setAttribute("key", "dsjhf.FDS!543|5G*DFgfdrhd%#454GDfgDb" + username);
-
                 requestDispatcher = request.getRequestDispatcher("indexLogeado.html");
                 requestDispatcher.forward(request, response);
-            } else {
+            } else if(usuario.getPassword().equals(password) && usuario.getNivel().equals("1")){
                 id = usuario.getId();
                 sesion.setAttribute("username", username);
                 sesion.setAttribute("idUsuario", id);
