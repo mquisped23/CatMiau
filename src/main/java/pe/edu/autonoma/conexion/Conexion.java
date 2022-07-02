@@ -23,7 +23,7 @@ public class Conexion {
                 String usuario = "miguel"; // el usuario
                 String password = "miguelelmejor"; // tu password
                 String url = "jdbc:mysql://localhost:3306/kanidos?autoReconnect = true & useSSL = false";
-
+            
                 // Establecer el Driver de conexión
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 conn = DriverManager.getConnection(url, usuario, password);
