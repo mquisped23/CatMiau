@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import pe.edu.autonoma.dao.RegistroDao;
+import pe.edu.autonoma.encriptamiento.EncriptacionContra;
 import pe.edu.autonoma.entity.Registro;
 
 /**
@@ -22,6 +23,7 @@ import pe.edu.autonoma.entity.Registro;
  */
 @WebServlet(name = "SaveUsuarioServlet", urlPatterns = {"/saveusuario"})
 public class SaveRegistroServlet extends HttpServlet {
+    EncriptacionContra encriptacion = new EncriptacionContra();
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -37,9 +39,16 @@ public class SaveRegistroServlet extends HttpServlet {
         String usuarioPersona = request.getParameter("Usuario");
         String Contra = request.getParameter("Contra-usua");
         String nivel  ="2";
-        //Creo un objeto
 
-        Registro registro = new Registro(nombreUsuario, apellidoUsuario, fechaUsuario, usuarioPersona, Contra , nivel);
+        //encripto la contrasena
+
+
+
+        //Creo un objeto
+        String contraencriptada = encriptacion.Encriptar(Contra);
+        //-------------------------------------------------------------
+
+        Registro registro = new Registro(nombreUsuario, apellidoUsuario, fechaUsuario, usuarioPersona, contraencriptada , nivel);
 
         //Ahora lo almacenamos en la base de datos
         try {
