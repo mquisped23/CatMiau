@@ -43,7 +43,7 @@ public class SignInServlet extends HttpServlet {
                 sesion.setAttribute("idUsuario", id);
 
                 sesion.setAttribute("key", "dsjhf.FDS!543|5G*DFgfdrhd%#454GDfgDb" + username);
-                requestDispatcher = request.getRequestDispatcher("indexLogeado.html");
+                requestDispatcher = request.getRequestDispatcher("indexLogeado.jsp");
                 requestDispatcher.forward(request, response);
             } else if(usuario.getPassword().equals(password) && usuario.getNivel().equals("1")){
                 id = usuario.getId();

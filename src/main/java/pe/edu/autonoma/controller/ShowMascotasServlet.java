@@ -43,6 +43,15 @@ public class ShowMascotasServlet extends HttpServlet {
         }
 
         request.setAttribute("mascotas", mascotas);
+        sesion.setMaxInactiveInterval(20);
+        
+        if (sesion.getAttribute("idUsuario") == null && sesion.getAttribute("username") == null) {
+            request.getSession().invalidate();
+             response.sendRedirect(request.getContextPath() + "/login.jsp");
+        }
+        
+
+        
 
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("show-mascota.jsp");
         requestDispatcher.forward(request, response);

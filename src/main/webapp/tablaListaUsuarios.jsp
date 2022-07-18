@@ -1,12 +1,13 @@
 <%@page import="javax.servlet.http.HttpSession"%>
 <%@ page import="pe.edu.autonoma.entity.Registro" %>
+<%@ page import="pe.edu.autonoma.encriptamiento.EncriptacionContra" %>
 <%@ page import="java.util.List" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <%
     
     List<Registro> registro = (List<Registro>) request.getAttribute("datos");
-
+    EncriptacionContra encriptacionContra  = new EncriptacionContra();
 %>
 <html>
 <head>
@@ -97,7 +98,7 @@
                     <td id="borrarTdRight"><%=producto.getApellidoUsuario()%></td>
                     <td id="borrarTdRight"><%=producto.getFechaUsuario()%></td>
                     <td id="borrarTdRight"><%=producto.getUsuario()%></td>
-                    <td id="borrarTdRight"><%=producto.getContra()%></td>
+                    <td id="borrarTdRight"><%= encriptacionContra.Desencriptar(producto.getContra())%></td>
                 </tr>
                 <%}%>
             </tbody>

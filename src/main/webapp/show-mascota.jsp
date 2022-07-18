@@ -1,7 +1,7 @@
 <%
     HttpSession sesion = request.getSession();
-    int id  = (int) sesion.getAttribute("idUsuario");
-
+    String id  = String.valueOf(sesion.getAttribute("idUsuario"));
+    int id1  = Integer.parseInt(id);
 %>
 
 <%@page import="pe.edu.autonoma.dao.MascotaDao"%>
@@ -62,7 +62,7 @@
                 <!-- MENU LINKS -->
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a id="fondoverde" href="indexLogeado.html" class="smoothScroll">Home</a></li>
+                        <li><a id="fondoverde" href="indexLogeado.jsp" class="smoothScroll">Home</a></li>
                         <li><a id="fondoverde" href="new-paseo.jsp" class="smoothScroll">Nueva MiauCita</a></li>
                         <li><a id="fondoverde" href="showmascotasservlet" class="smoothScroll">Mis MiauCitas</a></li>
                         <li><a id="fondoverde" href="indexLogeado.html#news" class="smoothScroll">Personal</a></li>
@@ -103,8 +103,8 @@
                     <%
                         //Instanciamos la clase UserService
                         MascotaDao dao = new MascotaDao();
-                        System.out.println(id);
-                        List<Mascota> datos = dao.list(id);//El <User>viene del servicio
+                        System.out.println(id1);
+                        List<Mascota> datos = dao.list(id1);//El <User>viene del servicio
                         for (Mascota u : datos) {
 
 

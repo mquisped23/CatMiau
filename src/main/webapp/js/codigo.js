@@ -19,13 +19,17 @@
     ws.onmessage = onMessage;
     boton.addEventListener('click', enviar);
 
-    function onOpen() {
-        var obj = JSON.parse(evt.data)
+    function onOpen(evt) {
+        var obj = JSON.parse(evt.data);
        
         console.log('Conectado...');
     }
 
-    function onClose() {
+    function onClose(evt) {
+        var obj = JSON.parse(evt.data);
+         msg = obj.nombre + 'Se a desconectado';
+
+        mensajes.innerHTML += msg + '\n';
         console.log('Desconectado...');
     }
 
@@ -39,9 +43,8 @@
     }
 
     function onMessage(evt) {
-        var obj = JSON.parse(evt.data)
-        ,
-        msg = obj.nombre + ' dice: ' + obj.mensaje;
+        var obj = JSON.parse(evt.data),
+            msg = obj.nombre + ' dice: ' + obj.mensaje;
 
 
         mensajes.innerHTML += msg + '\n';

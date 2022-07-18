@@ -62,7 +62,7 @@
                 <!-- MENU LINKS -->
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a id="fondoverde" href="indexLogeado.html" class="smoothScroll">Home</a></li>
+                        <li><a id="fondoverde" href="indexLogeado.jsp" class="smoothScroll">Home</a></li>
                         <li><a id="fondoverde" href="new-paseo.jsp" class="smoothScroll">Nueva MiauCita</a></li>
                         <li><a id="fondoverde" href="showmascotasservlet" class="smoothScroll">Mis MiauCitas</a></li>
                         <li><a id="fondoverde" href="indexLogeado.html#news" class="smoothScroll">Personal</a></li>

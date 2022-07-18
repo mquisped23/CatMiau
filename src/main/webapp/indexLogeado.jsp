@@ -66,7 +66,7 @@
                 <!-- MENU LINKS -->
                 <div  class="collapse navbar-collapse " style="width: 100%" >
                     <ul class="nav navbar-nav navbar-right" >
-                        <li><a id="fondoverde" href="indexLogeado.html" class="smoothScroll">Home</a></li>
+                        <li><a id="fondoverde" href="indexLogeado.jsp" class="smoothScroll">Home</a></li>
                         <li><a id="fondoverde" href="new-paseo.jsp"  class="smoothScroll">Nueva MiauCita</a></li>
                         
                         <li><a id="fondoverde" href="showmascotasservlet" class="smoothScroll">Mis MiauCitas</a></li>
@@ -97,7 +97,7 @@
                                 <div class="col-md-offset-1 col-md-10">
                                     <br><br> 
                                     
-                                    <h1>En nuestro chat podras compartir amenas platicas con los demÃ¡s clientes sobre sus gatitos y su cuidados</h1>
+                                    <h1>En nuestro chat podras compartir amenas platicas con los demás clientes sobre sus gatitos y su cuidados</h1>
                                     <br><br> 
                                     <a href="Pruevita.jsp" class="section-btn btn btn-default smoothScroll">Nuestro KatChat</a>
                                 </div>
@@ -108,7 +108,7 @@
                             <div class="caption">
                                 <div class="col-md-offset-1 col-md-10">
                                     <h1>KatMiau</h1>
-                                    <a href="#about" class="section-btn btn btn-default btn-gray smoothScroll">Nuestra VisiÃ³n</a>
+                                    <a href="#about" class="section-btn btn btn-default btn-gray smoothScroll">Nuestra Visión</a>
                                 </div>
                             </div>
                         </div>
@@ -117,7 +117,7 @@
                             <div class="caption">
                                 <div class="col-md-offset-1 col-md-10">
                                     <h1>KatMiau</h1>
-                                    <a href="#about" class="section-btn btn btn-default btn-blue smoothScroll">Nuestra MisiÃ³n</a>
+                                    <a href="#about" class="section-btn btn btn-default btn-blue smoothScroll">Nuestra Misión</a>
                                 </div>
                             </div>
                         </div>
@@ -167,7 +167,7 @@
 
                             </a>
                             <div class="news-info">
-                                <span> VILLA MARIA DEL TRIUNFO - PERÃš </span>
+                                <span> VILLA MARIA DEL TRIUNFO - PERÚ </span>
                                 <h3><a href="cvfabri-log.html">FABRIZIO DAVILA VARELA</a></h3>
                             </div>
                         </div>
@@ -181,7 +181,7 @@
                                 <img id="german" src="img/german.jpeg" class="img-responsive" alt="">
                             </a>
                             <div class="news-info">
-                                <span> MALA - PERÃš </span>
+                                <span> MALA - PERÚ </span>
                                 <h3><a href="cvangelo-log.html">Ismael German Zumaran Seminario</a></h3>
                             </div>
                         </div>
@@ -194,7 +194,7 @@
                                 <img src="img/miguelfoto.jpeg" class="img-responsive" alt="">
                             </a>
                             <div class="news-info">
-                                <span> LURIN- PERÃš </span>
+                                <span> LURIN- PERÚ </span>
                                 <h3><a href="cvmiguel-log.html">MIGUEL ANGEL QUISPE DUPUY</a></h3>
                             </div>
                         </div>
@@ -208,8 +208,8 @@
                                 <img src="img/gyanella.jpeg"  id  = "gyanella"  class="img-responsive"   alt="">
                             </a>
                             <div class="news-info">
-                                <span> VILLA EL SALVADOR - PERÃš </span>
-                                <h3><a href="cvgyanella-log.html">GYANELLA GISELLE CUNO CASAÃ‘O </a></h3>
+                                <span> VILLA EL SALVADOR - PERÚ </span>
+                                <h3><a href="cvgyanella-log.html">GYANELLA GISELLE CUNO CASAÑO </a></h3>
                             </div>
                         </div>
                         <br>
@@ -223,8 +223,8 @@
                                 <img src="img/fares.jpeg"  id  = "gyanella"  class="img-responsive"   alt="">
                             </a>
                             <div class="news-info">
-                                <span> VILLA EL SALVADOR - PERÃš </span>
-                                <h3><a href="cvfares-log.html">ORMEÃ‘O OCAMPO FARES ANGEL SALOMON </a></h3>
+                                <span> VILLA EL SALVADOR - PERÚ </span>
+                                <h3><a href="cvfares-log.html">ORMEÑO OCAMPO FARES ANGEL SALOMON </a></h3>
                             </div>
                         </div>
                         <br>
@@ -255,15 +255,15 @@
 
                     <div class="col-md-4 col-sm-4">
                         <div class="footer-thumb"> 
-                            <h4 class="wow fadeInUp" data-wow-delay="0.4s">Nuestro MisiÃ³n</h4>
-                            <p>Ser lÃ­der en los servicios que prestan en el tratamiento de la gestiÃ³n y modificaciÃ³n de conductas caninas. Ser el centro de referencia que se distinga por promocionar una atenciÃ³n de calidad, que de respuestas a las necesidades y expectativas del cliente.</p>
+                            <h4 class="wow fadeInUp" data-wow-delay="0.4s">Nuestro Misión</h4>
+                            <p>Ser líder en los servicios que prestan en el tratamiento de la gestión y modificación de conductas caninas. Ser el centro de referencia que se distinga por promocionar una atención de calidad, que de respuestas a las necesidades y expectativas del cliente.</p>
                         </div>
                     </div>
 
                     <div class="col-md-4 col-sm-4">
                         <div class="footer-thumb">
-                            <h4 class="wow fadeInUp" data-wow-delay="0.4s">Nuestro VisiÃ³n</h4>
-                            <p>Ofrecer el servicio de optima calidad que precisan nuestras mascotas, tanto en educaciÃ³n y adiestramiento canino como en la gestiÃ³n y modificaciÃ³n de sus conductas, garantizando los estÃ¡ndares de seguridad y <calidad class=""></calidad></p>
+                            <h4 class="wow fadeInUp" data-wow-delay="0.4s">Nuestro Visión</h4>
+                            <p>Ofrecer el servicio de optima calidad que precisan nuestras mascotas, tanto en educación y adiestramiento canino como en la gestión y modificación de sus conductas, garantizando los estándares de seguridad y <calidad class=""></calidad></p>
                         </div>
                     </div>
 

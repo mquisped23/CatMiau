@@ -3,7 +3,9 @@
     Created on : 7/12/2021, 06:07:12 PM
     Author     : andro
 --%>
-
+<%
+    String username  = String.valueOf(session.getAttribute("username"));
+%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -71,7 +73,7 @@
                 <!-- MENU LINKS -->
                 <div  class="collapse navbar-collapse " style="width: 100%" >
                     <ul class="nav navbar-nav navbar-right" >
-                        <li><a id="fondoverde" href="indexLogeado.html" class="smoothScroll">Home</a></li>
+                        <li><a id="fondoverde" href="indexLogeado.jsp" class="smoothScroll">Home</a></li>
                         <li><a id="fondoverde" href="new-paseo.jsp"  class="smoothScroll">Nueva MiauCita</a></li>
 
                         <li><a id="fondoverde" href="showmascotasservlet" class="smoothScroll">Mis MiauCitas</a></li>
@@ -99,7 +101,7 @@
             <form  target="el-iframe" action="ServletChat" >
                 <div id="cuadritoNombre">
                     <label class="nombre">Nombre:</label>
-                    <input type="text" id="usuario" name="txtnombre" placeholder="KatUsuario" />
+                    <input type="text" readonly id="usuario" name="txtnombre" value="<%= username %>" placeholder="KatUsuario" />
                 </div>
                 <div id="cuadritoMensaje">
                     <label class="nombre"  >Mensaje:</label> 
