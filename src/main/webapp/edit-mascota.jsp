@@ -12,6 +12,11 @@
 
 %>
 <%
+    response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+    session.setMaxInactiveInterval(30);
+    if (session.getAttribute("key") == null && session.getAttribute("username") == null) {
+        response.sendRedirect(request.getContextPath() + "/login.jsp");
+    }
     mascota = (Mascota) request.getAttribute("mascota");
 %>
 

@@ -16,13 +16,11 @@ import pe.edu.autonoma.entity.Usuario;
 
 @WebServlet(name = "SignInServlet", urlPatterns = "/signin")
 public class SignInServlet extends HttpServlet {
+
     EncriptacionContra desencriptar = new EncriptacionContra();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession sesion = request.getSession();
-        
-        
-       
 
         RequestDispatcher requestDispatcher;
 
@@ -36,38 +34,41 @@ public class SignInServlet extends HttpServlet {
 
         if (optionalUsuario.isPresent()) {
             Usuario usuario = optionalUsuario.get();
-            String contra  = desencriptar.Desencriptar(usuario.getPassword());
+            String contra = desencriptar.Desencriptar(usuario.getPassword());
             if (contra.equals(password) && usuario.getNivel().equals("2")) {
                 id = usuario.getId();
                 sesion.setAttribute("username", username);
                 sesion.setAttribute("idUsuario", id);
 
                 sesion.setAttribute("key", "dsjhf.FDS!543|5G*DFgfdrhd%#454GDfgDb" + username);
-                requestDispatcher = request.getRequestDispatcher("indexLogeado.jsp");
-                requestDispatcher.forward(request, response);
-            } else if(usuario.getPassword().equals(password) && usuario.getNivel().equals("1")){
+                response.sendRedirect(request.getContextPath() + "/indexLogeado.jsp");
+                return;
+            } else if (usuario.getPassword().equals(password) && usuario.getNivel().equals("1")) {
                 id = usuario.getId();
                 sesion.setAttribute("username", username);
                 sesion.setAttribute("idUsuario", id);
                 sesion.setAttribute("key", "dsjhf.FDS!543|5G*DFgfdrhd%#454GDfgDb" + username);
-                requestDispatcher = request.getRequestDispatcher("IndexAdmin.jsp");
-                requestDispatcher.forward(request, response);
+                response.sendRedirect(request.getContextPath() + "/IndexAdmin.jsp");
+                return;
             }
         }
+
         request.setAttribute("username", username);
         request.setAttribute("message", "El usuario y/o contraseña son incorrectos");
         requestDispatcher = request.getRequestDispatcher("login.jsp");
         requestDispatcher.forward(request, response);
-          if (sesion.getAttribute("idUsuario") == null && sesion.getAttribute("username") == null) {
-             response.sendRedirect(request.getContextPath() + "/login.jsp");
+        if (sesion.getAttribute("idUsuario") == null && sesion.getAttribute("username") == null) {
+            response.sendRedirect(request.getContextPath() + "/login.jsp");
         }
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession sesion = request.getSession();
-         if (sesion.getAttribute("idUsuario") == null && sesion.getAttribute("username") == null) {
-             response.sendRedirect(request.getContextPath() + "/login.jsp");
+        response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+        if (sesion.getAttribute("idUsuario") == null && sesion.getAttribute("username") == null) {
+            sesion.invalidate();
+            response.sendRedirect(request.getContextPath() + "/login.jsp");
         }
     }
 }

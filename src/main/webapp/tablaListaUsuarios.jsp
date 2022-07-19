@@ -5,6 +5,11 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <%
+    response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+    session.setMaxInactiveInterval(30);
+    if (session.getAttribute("key") == null && session.getAttribute("username") == null) {
+        response.sendRedirect(request.getContextPath() + "/login.jsp");
+    }
     
     List<Registro> registro = (List<Registro>) request.getAttribute("datos");
     EncriptacionContra encriptacionContra  = new EncriptacionContra();

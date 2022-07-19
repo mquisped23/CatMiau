@@ -2,6 +2,12 @@
     HttpSession sesion = request.getSession();
     String id  = String.valueOf(sesion.getAttribute("idUsuario"));
     int id1  = Integer.parseInt(id);
+    
+    response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+    session.setMaxInactiveInterval(30);
+    if (session.getAttribute("key") == null && session.getAttribute("username") == null) {
+        response.sendRedirect(request.getContextPath() + "/login.jsp");
+    }
 %>
 
 <%@page import="pe.edu.autonoma.dao.MascotaDao"%>

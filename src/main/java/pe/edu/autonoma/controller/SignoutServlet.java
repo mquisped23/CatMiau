@@ -13,16 +13,18 @@ public class SignoutServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-    }
-
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
         request.getSession().removeAttribute("idUsuario");
         request.getSession().removeAttribute("username");
         request.getSession().invalidate();
+    }
 
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.getSession().removeAttribute("idUsuario");
+        request.getSession().removeAttribute("username");
+        request.getSession().invalidate();
+        response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
         request.setAttribute("message", "Se ha cerrado la sesión de forma correcta.");
-         response.sendRedirect(request.getContextPath() + "/login.jsp");
-     
+        response.sendRedirect(request.getContextPath() + "/login.jsp");
+
     }
 }

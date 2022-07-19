@@ -10,6 +10,7 @@
 
 %>
 <%
+   
     username = (String) request.getAttribute("username");
     message = (String) request.getAttribute("message");
 %>
@@ -107,17 +108,17 @@
                         </div>
                     </form>
                     <div class="col-12 forgot">
-                      
+
                     </div>
                 </div>
             </div>
-                        
-                        
-           
-                        
+
+
+
+
         </div>
 
-       
+
 
     </body>
 </html>

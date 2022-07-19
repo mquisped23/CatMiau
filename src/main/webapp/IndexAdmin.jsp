@@ -1,13 +1,13 @@
 
 <%
     //Aqui obtengo el nivel del administrador enviado desde el sevlet SignInServlet
-   String idUsuario  = String.valueOf( session.getAttribute("idAdmin"));
-    String username  = String.valueOf( session.getAttribute("username"));
-    
+    String idUsuario = String.valueOf(session.getAttribute("idAdmin"));
+    String username = String.valueOf(session.getAttribute("username"));
+
     response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
-    
-    if (session.getAttribute("idUsuario") == null && session.getAttribute("username") == null) {
-        response.sendRedirect("login.jsp");
+    session.setMaxInactiveInterval(30);
+    if (session.getAttribute("key") == null && session.getAttribute("username") == null) {
+        response.sendRedirect(request.getContextPath() + "/login.jsp");
     }
 
 %>
@@ -123,7 +123,7 @@
                         <div class="item item-second">
                             <div class="caption">
                                 <div class="col-md-offset-1 col-md-10">
-                                    <h1>Bienvenido <%=username %></h1>
+                                    <h1>Bienvenido <%=username%></h1>
                                     <a href="#about" class="section-btn btn btn-default btn-gray smoothScroll">Nuestra Vision</a>
                                 </div>
                             </div>
