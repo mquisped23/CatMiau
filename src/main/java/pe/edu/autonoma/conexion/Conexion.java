@@ -7,6 +7,7 @@ package pe.edu.autonoma.conexion;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 
 
 public class Conexion {
@@ -20,9 +21,11 @@ public class Conexion {
 
             try {
                 String dataBase="kanidos";  //Aca se ingresa el nombre de tu base de datos
-                String usuario = "miguel"; // el usuario
-                String password = "miguelelmejor"; // tu password
-                String url = "jdbc:mysql://localhost:3306/kanidos?autoReconnect = true & useSSL = false";
+                String usuario = "uaqvu0i8kb3sgb5x"; // el usuario
+                String password = "VTDspfg75ljh7JVOO30n"; // tu password
+                //String url = "jdbc:mysql://localhost:3306/kanidos?autoReconnect = true & useSSL = false";
+                String url = "jdbc:mysql://uaqvu0i8kb3sgb5x:VTDspfg75ljh7JVOO30n@bycxivn8bz8po2dxakk7-mysql.services.clever-cloud.com:3306/bycxivn8bz8po2dxakk7?autoReconnect = true & useSSL = false";
+
             
                 // Establecer el Driver de conexión
                 Class.forName("com.mysql.cj.jdbc.Driver");
@@ -30,7 +33,7 @@ public class Conexion {
 
                 System.out.println("Conexion establecida");
 
-            } catch (Exception e) {
+            } catch (ClassNotFoundException | SQLException e) {
                 System.out.println( e.getMessage() );
                 System.out.println("Conexion Fallida");
             }
