@@ -21,7 +21,7 @@
 
     <head>
 
-        <title>Kani2</title>
+        <title>KatMiau</title>
 
         <meta charset="UTF-8"/>
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
