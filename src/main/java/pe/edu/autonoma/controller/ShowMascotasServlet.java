@@ -6,7 +6,7 @@
 package pe.edu.autonoma.controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.lang.NullPointerException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
@@ -29,8 +29,10 @@ public class ShowMascotasServlet extends HttpServlet {
 
 
 
-    protected void doProcess(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+    protected void doProcess(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, NullPointerException {
+        
+        try {
+            
         List<Mascota> mascotas = new ArrayList<>();
         HttpSession sesion = request.getSession();
         //id del usuario que se registro
@@ -50,21 +52,25 @@ public class ShowMascotasServlet extends HttpServlet {
              response.sendRedirect(request.getContextPath() + "/login.jsp");
         }
         
-
         
-
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("show-mascota.jsp");
         requestDispatcher.forward(request, response);
+        } catch (NullPointerException e) {
+            response.sendRedirect(request.getContextPath() + "/login.jsp");
+        }
 
     }
     
     
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
           this.doProcess(request, response);
+          
       
     }
 
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
           this.doProcess(request, response);

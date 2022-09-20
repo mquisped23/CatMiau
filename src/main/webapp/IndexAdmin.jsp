@@ -59,7 +59,7 @@
                     <div class="col-md-8 col-sm-7 text-align-right">
                         <span class="phone-icon"><i class="fa fa-phone"></i> +51 944-714-945</span>
                         <span class="date-icon"><i class="fa fa-calendar-plus-o"></i> 9:00 AM - 19:00 PM</span>
-                        <span class="email-icon"><i class="fa fa-envelope-o"></i>kanidos6@gmail.com</span>
+                        <span class="email-icon"><i class="fa fa-envelope-o"></i>KatMiau@gmail.com</span>
                     </div>
                 </div>
             </div>

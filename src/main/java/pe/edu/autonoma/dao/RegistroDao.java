@@ -34,15 +34,17 @@ public class RegistroDao {
     public void insert(Registro registro) {
         // Base de datos se utiliza la nomenclatura Snake Case
         try {
-            String sql = "INSERT INTO registro(nombre_usuario,apellido_usuario,fecha_usuario,usuario,contra, nivel) "
-                    + "VALUES (?, ?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO registro(nombre_usuario,apellido_usuario,fecha_usuario,telefono,direccion, usuario,contra, nivel) "
+                    + "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
             ps = conn.prepareStatement(sql);
             ps.setString(1, registro.getNombreUsuario());
             ps.setString(2, registro.getApellidoUsuario());
             ps.setString(3, registro.getFechaUsuario());
-            ps.setString(4, registro.getUsuario());
-            ps.setString(5, registro.getContra());
-            ps.setString(6, registro.getNivel());
+            ps.setInt(4, registro.getNumeroTelefonico());
+            ps.setString(5, registro.getDireccion());
+            ps.setString(6, registro.getUsuario());
+            ps.setString(7, registro.getContra());
+            ps.setString(8, registro.getNivel());
 
             ps.executeUpdate();
             ps.close();
@@ -75,7 +77,7 @@ public class RegistroDao {
     }
 
     // findById, GetById, GetEntity, listarId, findId
-    public Optional<Registro> findId(Integer id) {
+    public Optional<Registro> findId(int id) {
         Optional<Registro> optional = Optional.empty();
         try {
             String sql = "SELECT * FROM  registro WHERE id = ?";
@@ -86,8 +88,8 @@ public class RegistroDao {
 
             if (rs.next()) {
 
-                Registro registro = new Registro(rs.getInt("id"), rs.getString("nombre_usuario"),
-                        rs.getString("apellido_usuario"), rs.getString("fecha_usuario"), rs.getString("usuario"), rs.getString("contra"));
+                Registro registro = new Registro(rs.getString("nombre_usuario"),
+                        rs.getString("apellido_usuario"), rs.getString("fecha_usuario"),rs.getInt("telefono"),rs.getString("direccion") ,rs.getString("usuario"), rs.getString("contra"));
 
                 optional = Optional.of(registro);
             }

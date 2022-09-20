@@ -15,6 +15,8 @@ public class Registro {
     private String nombreUsuario;
     private String apellidoUsuario;
     private String fechaUsuario;
+    private Integer numeroTelefonico;
+    private String direccion;
     private String usuario;
     private String contra;
     private String nivel;
@@ -38,6 +40,27 @@ public class Registro {
         this.usuario = usuario;
         this.contra = contra;
         this.nivel = nivel;
+    }
+
+    public Registro(String nombreUsuario, String apellidoUsuario, String fechaUsuario, Integer numeroTelefonico, String direccion, String usuario, String contra, String nivel) {
+        this.nombreUsuario = nombreUsuario;
+        this.apellidoUsuario = apellidoUsuario;
+        this.fechaUsuario = fechaUsuario;
+        this.numeroTelefonico = numeroTelefonico;
+        this.direccion = direccion;
+        this.usuario = usuario;
+        this.contra = contra;
+        this.nivel = nivel;
+    }
+
+    public Registro(String nombreUsuario, String apellidoUsuario, String fechaUsuario, Integer numeroTelefonico, String direccion, String usuario, String contra) {
+        this.nombreUsuario = nombreUsuario;
+        this.apellidoUsuario = apellidoUsuario;
+        this.fechaUsuario = fechaUsuario;
+        this.numeroTelefonico = numeroTelefonico;
+        this.direccion = direccion;
+        this.usuario = usuario;
+        this.contra = contra;
     }
     
     
@@ -81,6 +104,24 @@ public class Registro {
     public void setFechaUsuario(String fechaUsuario) {
         this.fechaUsuario = fechaUsuario;
     }
+
+    public Integer getNumeroTelefonico() {
+        return numeroTelefonico;
+    }
+
+    public void setNumeroTelefonico(Integer numeroTelefonico) {
+        this.numeroTelefonico = numeroTelefonico;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+    
+    
 
     public String getUsuario() {
         return usuario;

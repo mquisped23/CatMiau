@@ -11,7 +11,6 @@ import java.io.IOException;
 import java.util.Optional;
 import pe.edu.autonoma.dao.UsuarioDao;
 import pe.edu.autonoma.encriptamiento.EncriptacionContra;
-import pe.edu.autonoma.entity.Registro;
 import pe.edu.autonoma.entity.Usuario;
 
 @WebServlet(name = "SignInServlet", urlPatterns = "/signin")
@@ -19,6 +18,7 @@ public class SignInServlet extends HttpServlet {
 
     EncriptacionContra desencriptar = new EncriptacionContra();
 
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession sesion = request.getSession();
 
@@ -57,12 +57,11 @@ public class SignInServlet extends HttpServlet {
         request.setAttribute("message", "El usuario y/o contraseña son incorrectos");
         requestDispatcher = request.getRequestDispatcher("login.jsp");
         requestDispatcher.forward(request, response);
-        if (sesion.getAttribute("idUsuario") == null && sesion.getAttribute("username") == null) {
-            response.sendRedirect(request.getContextPath() + "/login.jsp");
-        }
+
 
     }
 
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession sesion = request.getSession();
         response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");

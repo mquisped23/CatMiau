@@ -36,6 +36,8 @@ public class SaveRegistroServlet extends HttpServlet {
         String nombreUsuario = request.getParameter("Nombres");
         String apellidoUsuario = request.getParameter("Apellidos");
         String fechaUsuario = request.getParameter("fechadenacimiento");
+        int telefono = Integer.parseInt(request.getParameter("telefono"));
+        String direccion = request.getParameter("direccion");
         String usuarioPersona = request.getParameter("Usuario");
         String Contra = request.getParameter("Contra-usua");
         String nivel  ="2";
@@ -48,7 +50,7 @@ public class SaveRegistroServlet extends HttpServlet {
         String contraencriptada = encriptacion.Encriptar(Contra);
         //-------------------------------------------------------------
 
-        Registro registro = new Registro(nombreUsuario, apellidoUsuario, fechaUsuario, usuarioPersona, contraencriptada , nivel);
+        Registro registro = new Registro(nombreUsuario, apellidoUsuario, fechaUsuario,telefono,direccion, usuarioPersona, contraencriptada , nivel);
 
         //Ahora lo almacenamos en la base de datos
         try {

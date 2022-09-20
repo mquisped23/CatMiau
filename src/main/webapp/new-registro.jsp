@@ -10,7 +10,7 @@
     <head>
 
 <meta charset="UTF-8">
-    <title>Kanidos</title>
+    <title>KatMiau</title>
     <meta charset=UTF-8>
     <link rel="icon" type="favicon" href="../img/FAVICON-KANIDOS.png" sizes="30x30">
     <!--JQUERY-->
@@ -92,7 +92,7 @@
                     <div th:if="${param.logout}" id="regist" class="alert alert-success" role="alert">
                         REGISTRO DE USUARIOS
                     </div>
-                        <form class="col-12"  action="saveusuario" method="POST">
+                    <form class="col-12"  action="saveusuario" method="POST">
 
                         <div class="form-group" id="user-nombres">
                             <h5> Nombres:</h5>
@@ -106,6 +106,18 @@
                             <h5> Fecha de Nacimiento:</h5>
                             <input type="date" class="form-control" placeholder="Fecha de Nacimiento" name="fechadenacimiento"/>
                         </div>
+                            
+                        <div class="form-group" id="user-fechadenacimiento">
+                            <h5> Numero Telefonico:</h5>
+                            <input type="number" class="form-control" placeholder="Numero de telefono" name="telefono"/>
+                        </div>
+                        
+                        
+                        <div class="form-group" id="user-fechadenacimiento">
+                            <h5> Direccion:</h5>
+                            <input type="text" class="form-control" placeholder="Direccion de hogar" name="direccion"/>
+                        </div>
+
 
                         <div class="form-group" id="user-usuario">
                             <h5> Usuario:</h5>

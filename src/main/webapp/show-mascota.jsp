@@ -1,7 +1,9 @@
 <%
     HttpSession sesion = request.getSession();
-    String id  = String.valueOf(sesion.getAttribute("idUsuario"));
-    int id1  = Integer.parseInt(id);
+    //String id  = String.valueOf(sesion.getAttribute("idUsuario"));
+    //int id1  = Integer.parseInt(id);
+    
+    ArrayList<Mascota> mascotas = (ArrayList<Mascota>) request.getAttribute("mascotas");
     
     response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
     session.setMaxInactiveInterval(30);
@@ -107,13 +109,8 @@
 
                 <tbody>
                     <%
-                        //Instanciamos la clase UserService
-                        MascotaDao dao = new MascotaDao();
-                        System.out.println(id1);
-                        List<Mascota> datos = dao.list(id1);//El <User>viene del servicio
-                        for (Mascota u : datos) {
 
-
+                        for (Mascota u : mascotas) {
                     %>
                     <tr>
                         <td id="borrarTd" class="text-center"> <%=u.getId()%></td>
